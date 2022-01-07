@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLOTH STAKING</title>
+  <script src="https://unpkg.com/anchor-link@3"></script>
+  <script src="https://unpkg.com/anchor-link-browser-transport@3"></script>
+  <script src="waxjs.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/eosjs-account-name@2.2.1/lib/index.js" id="id-sc-include-js"></script>  
+
+
+  <link rel="stylesheet" href="mainstyle.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+</head>
+<body id="body">
+    <div id="toast" style="visibility: hidden"></div>
+    <div class="nav-container">
+        <div class="wrapper">
+            <nav>
+                <div class="logo">
+                    <a href="#">
+                        <img class="logoimg" src="./assets/logoo.png" alt="">
+                    </a>
+                </div>
+                <ul class="nav-items">
+                    <li>
+                        <div id="blc" class="blc" >
+                            <p id="aname" class="balance">Username</p>
+                            <p id="balance" class="balance">0.0000 SLTEST</p>
+                        </div>
+                    </li>
+                    <li>
+                        <input class="btn" id="claim"  src="./assets/Claim.png" onclick="claimbalance()" type="image">
+                    </li>
+                    <li>
+                        <input class="btn" id="loggedout" src="./assets/Login.png" onclick="WalletListVisible(!0)" type="image">
+                        <input class="btn" id="loggedin" src="./assets/Logout.png" onclick="logout()" style="display: none;" type="image">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+ 
+        </div></div>
+            <div class="main-content">
+                <div id="loader" style="display: none;">
+                    <p class="loadingText">Loading ...</p>
+                    <div class="lds-circle"><div></div></div>
+                </div>
+                <div id="lvlloader" style="display: none;">
+                    <img id="lvlimg" style="" src="https://media4.giphy.com/media/St3iie3VZ65VHkobqc/giphy.gif?cid=ecf05e47r7wicv168mlzdsa4bzdvh8jtxpzpodg5g5a69q5j&rid=giphy.gif&ct=g">
+                    <p class="loadingText">Loading ...</p>
+                    <div class="lds-circle"><div></div></div>
+                </div>
+                <div class="secondheader">
+                    <ul>
+                        <li>
+                            <p class="dashtxt"> User stake power : <span class="dashtxt" id="stakepwr"></span><br>
+                                Staked assets : <span class="dashtxt" id="stakedcount"></span><br>
+                                Time to claim: <span class="dashtxt" id="timetor"></span></p>
+                            <div id="staking" style="display: none;">
+                            <input class="stakeAllbtn btn" id = "stkall"src="./assets/StakeAll.png" onclick="stakeall()" type="image">
+                            <input class="stakeAllbtn btn" src="./assets/wallet.png" onclick="switchstaked(false)" type="image">
+                            <input class="stakeAllbtn btn" src="./assets/inv.png" onclick="switchstaked(true)" type="image">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content_wrapper">
+                    <div class="maindiv" id="maindiv"></div>
+                    <div id="walletlist" style="visibility: hidden">
+                        <button class="close" onclick="WalletListVisible(!1)">x</button>
+                        <div style="margin-top: 20px;color: #314780; font-size: 26px;font-family: Arial, Helvetica, sans-serif;font-weight: 600;">To continue please<p>select an option</p></div>
+                        <input class="anchor" id="anchor" src="./assets/anchor.png" onclick='selectWallet("anchor")' type="image"><br>
+                        <input class="wcw" id="wcw" src="./assets/wcw.png" onclick='selectWallet("cloud")' type="image">
+                    </div>
+                    <div id="message" style="visibility: hidden">
+                        <div><button class="close" onclick="HideMessage()">x</button></div>
+                        <div id="messagecontent"></div>
+                    </div>               
+                    </div>
+                    <div class="nav-container">
+                        <div class="wrapper">
+                          <nav> 
+                 <p class="aname"> Hercegovacka, Novi Pazar 36300, SERBIA<br>
+                  CEO: Ahmed Bihorac<br>
+                  theslothnft1@gmail.com<br>
+                  Company ID: 2307856212</p>
+              </nav>
+              </div>
+                </div>
+
+    <script> 
+        const contract = "slothstaking";
+        const symbol = "SLTEST";
+    </script>
+  <script src="main.js"></script>
+
+    </div>
+</body>
+</html>
