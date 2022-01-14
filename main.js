@@ -2,19 +2,19 @@
 
 
 const wax = new waxjs.WaxJS({
-  rpcEndpoint: 'wax.pink.gg',
+  rpcEndpoint: 'api.waxsweden.org',
   tryAutoLogin: true
 });
 const transport = new AnchorLinkBrowserTransport();
 const anchorLink = new AnchorLink({
   transport,
   chains: [{
-    chainId: 'f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12',
-    nodeUrl: 'https://testnet.wax.pink.gg',
+    chainId: '1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4',
+    nodeUrl: 'https://api.waxsweden.org',
   }],
 });
 const dapp = contract;
-const endpoint = "testnet.wax.pink.gg";
+const endpoint = "api.waxsweden.org";
 const tokenContract = {
   WAX: "eosio.token"
 };
@@ -24,7 +24,7 @@ var anchorAuth = "owner";
 main();
 var loggedIn = false;
 var switchtostaked = true;
-var collection = 'slothnfttest';
+var collection = 'theslothsnft';
 var switchtoshop = false;
 var canclick = false;
 var mainDiv = document.getElementById("maindiv");
@@ -356,7 +356,7 @@ async function GetAssets(colc,rates) {
   let str = [];
   var ss="";
   var path = "atomicassets/v1/assets?collection_name=" + colc + "&owner=" + wallet_userAccount +  "&page=1&limit=1000&order=desc&sort=asset_id";
-  const response = await fetch("https://" + "test.wax.api.atomicassets.io/" + path, {
+  const response = await fetch("https://" + "wax.api.atomicassets.io/" + path, {
     headers: {
       "Content-Type": "text/plain"
     },
@@ -509,7 +509,7 @@ async function GetBalance() {
 
 async function GetTemplateData(colc, id){
   var path = "atomicassets/v1/templates/" + colc + "/" + id;
-  const response = await fetch("https://test.wax.api.atomicassets.io/" + path, {
+  const response = await fetch("https://wax.api.atomicassets.io/" + path, {
     headers: {
       "Content-Type": "text/plain"
     },
